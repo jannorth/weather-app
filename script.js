@@ -2,12 +2,14 @@ var API_KEY = '8699e393b91603a6d1aa109a7ff3495c';
 const searchButton = document.querySelector("#search-button");
 const currentResults = document.querySelector("#current-results");
 const forecastResults = document.querySelector("#forecast-results");
+const searchHistoryList = document.querySelector("#search-history");
 
 searchButton.addEventListener("click", () => {
   const cityInput = document.querySelector("#city-input");
   const city = cityInput.value;
   getCurrentWeather(city);
   getForecast(city);
+  addToSearchHistory(city);
 });
 
 function getCurrentWeather(city) {
@@ -36,6 +38,21 @@ function getCurrentWeather(city) {
     })
     .catch(error => console.error(`Error getting current weather for ${city}: ${error}`));
 }
+
+function addToSearchHistory(city) {
+  const searchHistoryItems = searchHistoryList.querySelectorAll("li");
+  const existingCity = Array.from(searchHistoryItems).find(item => item.textContent === city);
+
+  if (existingCity) {
+    // If the city is already in the search history, move it to the top of the list
+    searchHistoryList.removeChild(existingCity);
+  }
+
+  const newListItem = document.createElement("li");
+  newListItem.textContent = city;
+  searchHistoryList.prepend(newListItem);
+}
+
 
 function getForecast(city) {
   fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${API_KEY}`)
@@ -69,3 +86,4 @@ function getForecast(city) {
     })
     .catch(error => console.error(`Error getting forecast for ${city}: ${error}`));
 }
+
