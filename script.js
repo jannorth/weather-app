@@ -12,6 +12,14 @@ searchButton.addEventListener("click", () => {
   addToSearchHistory(city);
 });
 
+searchHistoryList.addEventListener("click", event => {
+  if (event.target.tagName === "li") {
+    const city = event.target.textContent;
+    getCurrentWeather(city);
+    getForecast(city);
+  }
+});
+
 function getCurrentWeather(city) {
   fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`)
     .then(response => response.json())
@@ -40,7 +48,7 @@ function getCurrentWeather(city) {
 }
 
 function addToSearchHistory(city) {
-  const searchHistoryItems = searchHistoryList.querySelectorAll("li");
+  const searchHistoryItems = searchHistoryList.querySelectorAll("button");
   const existingCity = Array.from(searchHistoryItems).find(item => item.textContent === city);
 
   if (existingCity) {
@@ -48,9 +56,13 @@ function addToSearchHistory(city) {
     searchHistoryList.removeChild(existingCity);
   }
 
-  const newListItem = document.createElement("li");
-  newListItem.textContent = city;
-  searchHistoryList.prepend(newListItem);
+  const newButton = document.createElement("button");
+  newButton.textContent = city;
+  searchHistoryList.prepend(newButton);
+  newButton.addEventListener("click", () => {
+    getCurrentWeather(city);
+    getForecast(city);
+  });
 }
 
 
