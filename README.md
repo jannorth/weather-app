@@ -1,52 +1,25 @@
-# <open-weather-app>
+# weather-app
 
 ## Description
 
-AS A traveler
-
-I WANT to see the weather outlook for multiple cities
-
-SO THAT I can plan a trip accordingly
-
-
-GIVEN a weather dashboard with form inputs
-
-WHEN I search for a city
-
-THEN I am presented with current and future conditions for that city and that city is added to the search history
-
-WHEN I view current weather conditions for that city
-
-
-THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, and the the wind speed
-
-WHEN I view future weather conditions for that city
-
-
-THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
-
-WHEN I click on a city in the search history
-
-THEN I am again presented with current and future conditions for that city
+The purpose of this project is to have the ability to search current and forecast weather conditions for a city and all cities in the users search history.
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Credits](#credits)
 - [License](#license)
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+[Click here to use the weather app!](https://www.example.com/)
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+[Go to this link.](https://www.example.com/) Enter a city to search for current weather.
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+![Richmond search](assets/images/weather-app2.png)
 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+Each city search will save on the right hand side for future access. Click on a saved city to revisit those current weather conditions.
 
+![saved history search](assets/images/weather-app.png)
