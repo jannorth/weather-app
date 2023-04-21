@@ -16,10 +16,12 @@ The purpose of this project is to have the ability to search current and forecas
 
 ## Usage
 
-[Go to this link.](https://www.example.com/) Enter a city to search for current weather.
+[Go to this link.](https://jannorth.github.io/weather-app/) Enter a city to search for current weather.
 
 ![Richmond search](assets/images/weather-app2.png)
 
 Each city search will save on the right hand side for future access. Click on a saved city to revisit those current weather conditions.
 
 ![saved history search](assets/images/weather-app.png)
+
+https://jannorth.github.io/weather-app/
