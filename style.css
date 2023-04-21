@@ -61,3 +61,88 @@ h2 {
     align-items: center;
     margin: auto;
 }
+
+/* Media queries */
+
+/* For screens smaller than 600px */
+@media (max-width: 600px) {
+    header {
+        font-size: xx-large;
+    }
+    
+    #current-weather {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #search-history {
+        align-items: center;
+    }
+    
+    .card {
+        margin: 10px;
+    }
+    
+    #forecast-results, #current-weather {
+        flex-wrap: wrap;
+    }
+    
+    .forecast-item {
+        margin: 10px;
+    }
+}
+
+/* For screens between 600px and 900px */
+@media (min-width: 600px) and (max-width: 900px) {
+    header {
+        font-size: xx-large;
+    }
+    
+    #current-weather {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    #search-history {
+        align-items: center;
+    }
+    
+    .card {
+        margin: 10px;
+    }
+    
+    #forecast-results, #current-weather {
+        flex-wrap: wrap;
+    }
+    
+    .forecast-item {
+        margin: 10px;
+    }
+}
+
+/* For screens larger than 900px */
+@media (min-width: 900px) {
+    header {
+        font-size: xxx-large;
+    }
+    
+    #current-weather {
+        flex-direction: row;
+    }
+    
+    #search-history {
+        align-items: center;
+    }
+    
+    .card {
+        margin: 25px;
+    }
+    
+    #forecast-results, #current-weather {
+        flex-wrap: nowrap;
+    }
+    
+    .forecast-item {
+        margin: 25px;
+    }
+}
